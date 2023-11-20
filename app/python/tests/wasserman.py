@@ -7,7 +7,6 @@ from sqlite3 import Error
 from termcolor import colored
 import db
 
-
 def copy(db_production, db_test):
     try:
         conn_production = db.create_connection(db_production)
@@ -44,6 +43,6 @@ def copy(db_production, db_test):
 
         conn_production.close()
         conn_test.close()
-
+        
     except Error as e:
         print(colored(e, 'red'))

@@ -8,10 +8,10 @@
 ####################################################
 import sqlite3
 
-connection = sqlite3.connect('db/rgw.sqlite3')
+connection = sqlite3.connect('db/rgw_test.sqlite3')
 cursor = connection.cursor()
 
-input_data = open('db/input/wasserman_u20.csv', 'r')
+input_data = open('db/input/www.csv', 'r')
 
 # Extract data from CSV file row by row and insert into DB
 for row in input_data:

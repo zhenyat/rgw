@@ -20,6 +20,7 @@
     > .read app/sql/create_respondents.sql
     > .read app/sql/create_responses.sql
     > .read app/sql/create_wasserman_u20.sql
+    > .read app/sql/create_scores.sql
   % app/python/populate_wasserman_u20.py 
   % app/python/populate_survey_data.py 
   % app/python/tests/generate_fakes.py

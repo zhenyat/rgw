@@ -8,12 +8,13 @@
 ##########################################################
 import sqlite3
 from sqlite3 import Error
+from termcolor import colored
 
 def create_connection(db_file):
     connection = None
     try:
         connection = sqlite3.connect(db_file)
     except Error as e:
-        print(e)
+        print(colored(e, 'red'))
 
     return connection

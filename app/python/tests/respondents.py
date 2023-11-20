@@ -1,5 +1,3 @@
-#! /usr/bin/env python3
-
 #################################################################
 #   Creates table Respondents and populates it with faked data
 #

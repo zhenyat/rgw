@@ -1,5 +1,3 @@
-#! /usr/bin/env python3
-
 ########################################################
 #   Creates and populates table Schools with faked data
 #

@@ -1,5 +1,3 @@
-#! /usr/bin/env python3
-
 #################################################################
 #   Creates table Responses and populates it with faked data
 #
@@ -57,3 +55,4 @@ def create(database):
 
     except Error as e:
         print(colored(e, 'red'))
+        
