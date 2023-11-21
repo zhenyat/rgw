@@ -1,8 +1,8 @@
-##################################################################
-#   Create table Questionnaire and copies data from production DB
+###########################################################################
+#   Creates Test DB table Questionnaire and copies data from production DB
 #
 #   18.11.2023  Rada Telyukova
-##################################################################
+###########################################################################
 from sqlite3 import Error
 from termcolor import colored
 import db

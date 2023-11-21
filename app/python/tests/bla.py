@@ -15,6 +15,39 @@ import db
 conn_test = db.create_connection('db/rgw_test.sqlite3')
 cur_test = conn_test.cursor()
 
+################    Array to / from DB
+original_score = ['original', 14, 9, 8, 11, 8, 9, 7, 6]
+standard_score = ['standard', 67, 52, 31, 51, 51, 47, 33, 34]
+
+rows = [
+    (3, original_score[0], original_score[1], original_score[2], original_score[3], original_score[4], original_score[5], original_score[6], original_score[7], original_score[8]),
+    (3, standard_score[0], standard_score[1], standard_score[2], standard_score[3], standard_score[4], standard_score[5], standard_score[6], standard_score[7], standard_score[8])
+]
+print('rows to be inserted: ', rows)
+row=(1, original_score[0], original_score[1], original_score[2], original_score[3], original_score[4], original_score[5], original_score[6], original_score[7], original_score[8]),
+
+cur_test.executemany(
+    '''
+        INSERT INTO Scores (respondent_id, kind, v1, v2, v3, v4, v5, v6, v7, v8) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ''',
+    rows
+)
+conn_test.commit()
+
+cur_test.execute("SELECT * FROM Scores where respondent_id=3 AND kind='standard'")
+for row in cur_test:
+    print('--- selected row as tuple: ', row)
+    for i in range(len(row)):
+        print(i, row[i])
+
+    standard_scores = list(row)   # tuple to list
+    print('Final - standard_scores: ', standard_scores)
+
+################    Array to / from DB (end)
+exit()
+
+
 cur_test.execute("SELECT id FROM Schools where nick='dummy'")
 # the trailing comma after result unpacks the element from 
 # the single-element tuple

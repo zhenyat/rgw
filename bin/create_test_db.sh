@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 ########################################
-#   Creates and populates production DB
+#   Creates and populates test DB
 #       Parameter $1 - DB filename
 #########################################
 

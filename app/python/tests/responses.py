@@ -1,8 +1,8 @@
-#################################################################
-#   Creates table Responses and populates it with faked data
+######################################################################
+#   Creates Test DB table Responses and populates it with faked data
 #
 #   18.11.2023  Rada Telyukova
-#################################################################
+######################################################################
 from sqlite3 import Error
 from termcolor import colored
 from faker import Faker

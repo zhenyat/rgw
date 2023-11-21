@@ -11,7 +11,7 @@ import sqlite3
 connection = sqlite3.connect('db/rgw.sqlite3')
 cursor = connection.cursor()
 
-input_data = open('db/input/google_numbers.csv', 'r')
+input_data = open('db/csv/google_numbers.csv', 'r')
 
 # Extract data from CSV file row by row
 for row in input_data:
@@ -50,7 +50,7 @@ for row in input_data:
             case 'часто':
                 answer = 'regularly'
             case _:
-                exit
+                exit()
 
         cursor.execute('INSERT INTO Responses (respondent_id, questionnaire_id, answer) VALUES (?, ?, ?)',
                        (current_respondent_id, questionnaire_id, answer)

@@ -6,8 +6,9 @@
 #!/bin/zsh
 
 ########################################
-#   CInitiates DB (production or test)
-#########################################
+#   Initiates DB (production or test)
+#       Parameter $1 - {production | test}}
+########################################
 set +xv
 
 if [ -z "$1" ]; 
@@ -23,7 +24,6 @@ else
 
     else
         echo "Parameter must be either 'test' or 'production'"
-        exit
+        exit()
     fi
-    echo $db_name
 fi

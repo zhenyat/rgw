@@ -1,8 +1,8 @@
-########################################################
-#   Creates and populates table Scales with data
+#########################################################
+#   Creates and populates Test DB table Scales with data
 #
 #   18.11.2023  Rada Telyukova
-########################################################
+#########################################################
 from sqlite3 import Error
 from termcolor import colored
 import db

@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS Questionnaire (
 .schema Questionnaire
 
 .mode csv
-.import db/input/questionnaire.csv Questionnaire
+.import db/csv/questionnaire.csv Questionnaire
 
 .mode columns
 .header on

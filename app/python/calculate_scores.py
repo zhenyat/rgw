@@ -1,18 +1,17 @@
 #! /usr/bin/env python3
 
-##############################################################
-#   Calculates original & standard (Wasserman et al.) scores
+###############################################################################
+#   Calculates original & standard (Wasserman et al.) scores for production DB
 #
 #   21.11.2023  Rada Telyukova
-##############################################################
+###############################################################################
 from sqlite3 import Error
 from termcolor import colored
 import db
-import json
 
 def main():
-    db_test = 'db/rgw_test.sqlite3'
-    conn = db.create_connection(db_test)
+    db_production = 'db/rgw.sqlite3'
+    conn = db.create_connection(db_production)
 
     with conn:
         cur = conn.cursor()
@@ -74,13 +73,13 @@ def main():
                 for male_points, female_points in wasserman:
                     standard_score[scale_id] = male_points if sex == 'M' else female_points
                 
-            print(respondent_id, original_score, standard_score)
+            # print(respondent_id, original_score, standard_score)
 
             rows = [
                 (respondent_id, original_score[0], original_score[1], original_score[2], original_score[3], original_score[4], original_score[5],  original_score[6], original_score[7], original_score[8]),
                 (respondent_id, standard_score[0], standard_score[1], standard_score[2], standard_score[3], standard_score[4], standard_score[5],  standard_score[6], standard_score[7], standard_score[8])
             ]
-            print(rows)
+            # print(rows)
 
             try:
                 cur.executemany(
@@ -94,6 +93,8 @@ def main():
 
             except Error as e:
                 print(colored(e, 'red'))
+
+    print(colored(f'===== Table "Scores": {cur.lastrowid} records', 'green'))
 
 if __name__ == '__main__':
     main()

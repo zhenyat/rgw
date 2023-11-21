@@ -10,7 +10,7 @@
   - Valentina Studio
   - DBeaver
   
-## Commands to create and populate DB:
+## Commands to create and populate Production DB:
 ```sh
   % rm db/rgw.sqlite3
   % sqlite3 db/rgw.sqlite3
@@ -19,10 +19,13 @@
     > .read app/sql/create_questionnaire.sql
     > .read app/sql/create_respondents.sql
     > .read app/sql/create_responses.sql
-    > .read app/sql/create_wasserman_u20.sql
+    > .read app/sql/create_points.sql
     > .read app/sql/create_scores.sql
-  % app/python/populate_wasserman_u20.py 
+  % app/python/populate_points.py 
   % app/python/populate_survey_data.py 
+```
+## Commands to create and populate Production DB:
+```sh
   % app/python/tests/generate_fakes.py
 ```
 

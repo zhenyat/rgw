@@ -1,18 +1,18 @@
---------------------------------------------------------------
---  Creates table Scores                                    --
---                                                          --
---    id                - Primary key                       --
---    respondent_id     - Foreign key                       --
---    v0                - Raw score value                   --
---    v1 ... v8         - Std Score values for Scales 1...8 --
---                                                          --
---  20.11.2023  Rada Telyukova                              --
---------------------------------------------------------------
+----------------------------------------------------------------
+--  Creates table Scores                                      --
+--                                                            --
+--    id                - Primary key                         --
+--    respondent_id     - Foreign key                         --
+--    kind              - enum { 'original' | 'standard'  }   --
+--    v1 ... v8         - Score values for Scales 1...8       --
+--                                                            --
+--  20.11.2023  Rada Telyukova                                --
+----------------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS Scores (
   id INTEGER PRIMARY KEY,
   respondent_id INTEGER,
-  v0 INTEGER NOT NULL,
+  kind TEXT CHECK(kind IN ('original', 'standard')) NOT NULL,
   v1 INTEGER NOT NULL,
   v2 INTEGER NOT NULL,
   v3 INTEGER NOT NULL,

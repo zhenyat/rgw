@@ -1,8 +1,8 @@
-########################################################
-#   Creates and populates table Schools with faked data
+################################################################
+#   Creates and populates Test DB table Schools with faked data
 #
 #   18.11.2023  Rada Telyukova
-########################################################
+################################################################
 from sqlite3 import Error
 from termcolor import colored
 import db
