@@ -26,6 +26,10 @@ def create(database):
                 'INSERT INTO Schools (nick, title) VALUES (?, ?)',
                 ('dummy',  'Dummy school for testing')
             )
+            cur.execute(
+                'INSERT INTO Schools (nick, title) VALUES (?, ?)',
+                ('empty',  'Empty school for testing')
+            )
 
             conn.commit()
 
